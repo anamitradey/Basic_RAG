@@ -1,0 +1,31 @@
+# === Embedding model ===
+embedder_provider: hf_local
+embedder_opts:
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+
+# === Vector store ===
+vector_store: chroma
+vector_store_opts: {}          
+vector_store_path: ./db       
+
+# === Retrieval settings ===
+chunk_size: 500               
+chunk_overlap: 50             
+top_k: 5                      
+chain_type: stuff             
+
+# === Local LLM via llama-cpp-python ===
+# llm_provider: llamacpp
+# llm_opts:
+#   model_path: ./llama-2-7b.Q4_K_M.gguf
+#   n_ctx: 2048                  
+#   n_threads: 4                 
+#   temperature: 0.0             
+
+llm_provider: openai_chat
+llm_opts:
+  model_name: gpt-4o
+  temperature: 0.0
+  max_tokens: 512  
+# === (Optional) Seed data ingestion on startup ===
+data_paths: []                

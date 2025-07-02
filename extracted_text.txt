@@ -1,0 +1,987 @@
+Platform Architecture
+
+Platform Architecture
+Table of Contents
+Platform Overview 6
+What our AI powered Chatbots can do? 6
+Module Architecture 7
+Platform Architecture 7
+Conversation Manager 9
+Flow Tasks 9
+FAQ Tasks 13
+Small Talk 14
+Live Agent Handoff 16
+Conversational AI Engine 17
+Machine Learning Engine 17
+Classifier & Scoring Engine 17
+Entity Classifier Engine 17
+Semantic Dictionary 17
+Customizations 17
+Sentiment Analysis 18
+Architectural Representation 18
+Intelligent Flow Interpreter 18
+Bot Memory 18
+Node Execution and Transitions 19
+Flow Reports 19
+Multiple Sub-Intents 20
+Pause & Resume of intents 20
+Follow-up intents 21
+Sentiment Analysis 21
+Training Logs & Supervised Learning 21
+1
+
+Platform Architecture
+Enterprise Integration Services 21
+API Service Interface 22
+Secure On-Prem Connector 22
+Authorizations 22
+SSO Support 23
+Payment Gateways 23
+Broadcast Webhooks 23
+Scheduled Notifications 24
+Custom Integrations 24
+Messaging Service 24
+Message Routing 24
+Encrypted chat history 25
+Scheduled messaging & User notifications 25
+Channel Integrations 25
+Channel Authorization 25
+Message API Handling 25
+Message Auto Formatting 25
+Profile Fetcher 26
+Built-in channels 26
+BotJet.ai SDK 26
+Agent Integrations 27
+EngageJet Integration 27
+Built-in agent integrations 28
+Custom agent integrations 28
+Security & Compliance 28
+Encryption 28
+Authentication 28
+SDK Domain verification 28
+Encrypted chat history & Key Management 28
+Field Masking 28
+2
+
+Platform Architecture
+Audit Logs 28
+Bot Studio GUI 29
+Authorization & Payment Apps 29
+Flow Designer 29
+Testing & Debugging 30
+Training 30
+Import & Export Bot 31
+Versioning 31
+Multi-Language 31
+Channels 31
+Agent Transfer 31
+Broadcast 31
+Analytics & Reports 32
+Collaboration 33
+Business Page 33
+Control Center GUI 33
+ObserverJet 34
+Overview 34
+Live Analytics 35
+Live Chat Monitoring 35
+Intelligent Filters 36
+Chat Takeover 37
+Architectural Representation 37
+Convojet Platform 37
+How it works? 38
+Speech Engine 39
+ASR Engine 39
+TTS Engine 39
+End-to-End Message Flow 39
+3
+
+Platform Architecture
+Platform Deployment 40
+On-Cloud 40
+On-Premise 40
+Comparison Chart 41
+About us 42
+4
+
+Platform Architecture
+Platform Overview
+The Botjet.ai platform is an advanced Chatbot Development Platform that provide enterprise grade
+tools for building and maintaining AI powered Chatbots. The platform helps businesses in developing
+any Smart Chatbots a.k.a Intelligent Virtual Assistants for any cross functional business cases, built to
+support large number of users on any cloud or on on-prem model with any required security protocols.
+On-Cloud (SaaS) version of platform helps organizations create and manage the entire lifecycle of AI
+Powered rich, multi-language and omni channel chatbots that enables complex use cases with
+enterprise standards without the hassle of procuring and maintaining expensive resources like
+hardware, software development or hosting.
+Botjet.ai provides an option to run the platform on-cloud or on-premise and provides tools for bot
+developers and administrators to manage life cycle of chatbot on their premises or on-cloud. Unlike
+other chatbot frameworks where the developer needs to develop, write code, host and manage the
+chatbot implementation, botjet.ai platform solution takes those burdens and provides an easy to use
+tools to develop and deploy chatbots.
+What our AI powered Chatbots can do?
+Developer can design and create four major types of interactions between end-users and chatbots,
+enterprise systems and other systems like home devices and IOT using Botjet.ai Platform.
+Small Talk
+Small talk enables chatbot to converse and engage the user with casual conversation. Platform tools
+provide an option to extend the default small talk to a domain specific small talk which expands the
+knowledge of the chatbot and makes the conversation realistic.
+FAQ
+Chatbot can answer to any domain related questions asked by end-user as the platform enables the
+developers to feed chatbot with any number of FAQ’s and amplifies the bot’s knowledge via
+supervised and unsupervised learning. The platform answers the user’s question in a most appropriate
+and contextual way with different results to serve diverse demands. FAQ’s even have the capability to
+trigger a related business use case as follow up to answer.
+Flows
+Flows are the logic driven complex business use cases built using flow designer that can conditionally
+route the task through network of nodes and transition branches. Flow is a diagrammatic
+representation of expected conversation from an end user with a chatbot.
+Broadcasts
+5
+
+Platform Architecture
+Chatbot can interact with user through timely based broadcast messages, user subscribed broadcasts
+or manually pushed broadcast messages. Developer can schedule automatic scheduled broadcast
+jobs or manually push the broadcast messages to end-user on behalf of the bot. Enterprise systems
+can also push the messages through secure chatbot broadcast webhook.
+Module Architecture
+Below diagram shows the Botjet.ai platform comprised of different components and tools.
+Platform Architecture
+The Botjet.ai platform provides advanced and easy to use tools for designing, building, testing and
+deploying enterprise chat bots. This end-to-end conversational AI solution gives a flexible, scalable
+and secure platform for creation of chat-bots to execute complex use cases with AI driven intelligent
+flows and enable customer engagement across different channels.
+Botjet.ai is comprised of four components
+● Intelligent flow interpreter and enterprise integration services.
+● Messaging middleware and channel, agent adapters.
+● Machine Learning and natural language processing engine.
+● Security and compliance.
+This document provides more detailed information about the platform architecture and components of
+Botjet.ai Platform and how the tools can be used to build enterprise chatbots.
+6
+
+Platform Architecture
+Botjet.ai platform architecture can be deployed and managed on-premise or on-cloud using Amazon
+Web Services infrastructure, ensuring its security and performance without the need of any new
+infrastructure setup.
+Architecture Diagram
+Below diagram provides an architectural overview of Botjet.ai platform tools and components.
+7
+
+Platform Architecture
+Conversation Manager
+Botjet.ai Platform provides different ways to design interactions of users with a chatbot. These
+interactions defines the behaviour of chatbot, how well a chatbot can perform, task fulfillment and long
+term value. Our platform provides robust tools to build a chatbot that can perform any task ranging
+from simple to complex to meet business requirements. Developer can design a bot that can notify
+users, generate reports, pull reports, collect information from users, answer questions, create leads for
+business and execute system to system workflows.
+This section describes the interaction models supported by Botjet.ai Platform and how they function.
+Flow Tasks
+Flow tasks are the advanced intents that can perform complex operations to achieve a business use
+case. It is logic and condition driven node network which accomplishes any business goal. Flow is
+triggered through intent request along with captured entities, which in turn executes the node network.
+It also have capabilities like amending the existing task, understanding sub-intents and follow-up
+intents to fulfill the business workflow and user requirements.
+Flow task is comprised of different nodes and transitions between them which collectively form a
+logic-driven node network.
+Nodes
+A node is a logical component used in building a flow. There are different types of nodes which have
+its own distinct operation to fulfill business workflow. Below information describes each type of node
+and its functions.
+Intent
+It is the entry point to the flow. Intent node contains utterances which can trigger the flow request.
+Utterances are the phrases through which end-user can invoke the flow. These are trained to ML
+model which takes care of processing user input and invoking the most appropriate flow task.
+Utterances can also have entity tags which are used by ML model to extract the entities from user
+input. More details about entity will be covered in the next section.
+Entity
+Entity can be described as a property or a data field in the task. A flow can have many entities of
+different types like Location, Person Name, Date, Past Date, Future Date, Time, Date Range, Number,
+Airport, Phone Number, Email, Regex, Enum List. These entities can be trained with utterances which
+improves the conversational behaviour of a chatbot. Developer can customize the user prompt and
+8
+
+Platform Architecture
+error prompt of the node. These messages can be formatted with rich media templates to stimulate the
+conversation into a most interactive fashion. Prompts can be written logically using Javascript/Python
+code using inbuilt editor. Entity node also provides some advanced features like entity masking,
+suggestions and multi value recognition. The node can be either set as a mandatory node or as a
+hidden node depending upon the use case requirement.
+Message
+Message node is a simple component which can be used to display information to the user. Like
+prompt message in entity node, this message node also supports message formatting. Message
+prompts can be formatted using in-built Javascript/Python editor.
+Form
+Form node is used to collect information from users through interactive inline forms. This is an input
+node that is comprised of multiple form elements with different field types. Form node supports
+different field types like text, password, email, phone number with country code selection, time, date,
+number, text area, radio button, dropdown and advanced features like information masking.
+Query
+Query node is an input node that asks user for confirmation (Yes or No). Same as entity node this node
+also have a prompt message which supports rich media and code editor. This node can also be used
+for taking free text input from the user which does not have any precedence over task properties like
+entity node.
+Script
+Script node can be used to do manipulations on the context, storing important information in the
+session which can be used later on and fulfill business requirements. Script code can be written in
+Javascript/Python.
+Request
+This node is used for enterprise integration. It is responsible to interact with enterprise systems using
+APIs and process the payload to take the next step. It supports REST and SOAP APIs. Script nodes
+along with request node can be used to preprocess payload and postprocess the API response. This
+node should be configured with all API details like url, method, headers, payload and authorization.
+Authorization
+Authorization node enables end-user to authenticate himself with the chatbot and provide access to
+his information in enterprise system. The information collected can be used in other nodes like request
+nodes to access APIs. Botjet.ai platform contains authorization apps which supports different types of
+auth mechanisms like Basic, API Key, OAuth 1, OAuth 2 and LDAP.
+9
+
+Platform Architecture
+Payment
+Payment node is used to process payments from end-user. It supports different payment gateways like
+Paytm, Stripe, PayPal. Developer can configure payment gateways on the fly in Botjet.ai Payment Apps.
+Agent Transfer
+This node transfers the current ongoing conversation from chat bot to human agent in any support
+systems. Our platform supports systems like Live Chat, Fresh Desk, Live Person and any generic
+support systems through webhooks.
+Report
+Report node is used to generate reports from user provided information. These reports can be viewed
+and analysed by system administrators or business analytics in platform dashboard.
+Feedback
+Feedback node is used to collect feedback from end-user about bot/flow experience. It helps the
+developers in improving the conversational experience. This node provides on the go configuration for
+displaying rating scale and asking user for review message. The collected feedbacks can be seen in
+bot analytics and reports.
+Notification
+Notification node is used to push notifications to any user through SMS or email. These can be used for
+business notifications.
+Subscriber
+Subscriber node enables users to subscribe for an activity like scheduled alerts, scheduled task
+execution using APIs. This node can also be used as a reminder by notifying the user at a mentioned
+time. There is also a provision to subscribe to a webhook, in which enterprise systems can use the
+webhook to push the alerts to subscribed users.
+Flow Connector
+This node is used to define the sub-intents. Features like an option to toggle pause/resume of flows
+and remembering context between the flows are enabled at this node. User input can trigger single or
+multiple sub-intents depending upon the connections satisfied.
+10
+
+Platform Architecture
+Below are some screenshots of properties panel of nodes.
+Transitions
+Transitions are the conditional branching between nodes. It defines which node to execute next. Each
+node can have any number of transitions based on logical conditions. A flow fulfills the business
+requirement by traversing through the node network via transitions.
+Our platform provides a way to write the transition conditions, where each condition is comprised of
+left operand, operator, right operand and a goto field which defines where to go next. Through the
+context the left and right operand’s values will be evaluated and condition is parsed.
+11
+
+Platform Architecture
+Available operators
+Transitions contain different operators which leverages task for bot developer to design the business
+flow.
+● Mathematical Operators: Equals, Not Equals, Greater than, Less than, Greater than or equal to,
+​
+Less than or equal to.
+● Logical Operators: Exists, Does not exists, Contains, in, Regex.
+​
+Flow Options
+Hidden Flow
+Enabling hidden flow will make the flow disappear from any help or ambiguity menu, but user can
+invoke it on demand (via mentioning the intent name or utterances trained against the intent name).
+Disabled Flow
+Disabled flow can only be used as a sub intent i.e connecting it in the flow connector node. It cannot
+be invoked on demand.
+Tip: Enabling both hidden flow and disabled flow will make it a kind of reusable flow like a package in
+​
+programming language.
+Welcome Flow
+12
+
+Platform Architecture
+When a flow is marked as a welcome flow, the platform launches the flow whenever user connects
+with the bot. It can be used to send custom formatted welcome messages or to collect information
+from users at the beginning.
+Fallback Flow
+Enabling this option will make that flow as a default option and triggers it whenever the bot is unable to
+find any answers for user’s query. This kind of flow can be used to show help message or collecting
+feedback from the user or any kind of use case as per the requirement or necessity.
+FAQ Tasks
+Supervised FAQs
+Developer can train the bot with domain knowledge by feeding domain related questions and their
+answers. A question can be asked in multiple forms by end-user those forms and key terms can be
+trained through Botjet.ai’s dashboard. Based on trained model Botjet’s ML Engine can answer the
+question asked by the user in a most appropriate way.
+Import and Export FAQs
+Botjet.ai’s bot studio dashboard support importing FAQs from .csv files which makes task easy for
+business users to add or delete FAQs. It also supports exporting FAQs in .csv or .json format.
+Fallback FAQ API
+Bot can be configured with an enterprise system API for FAQs which acts as a fallback API. If a chatbot
+failed to answer the user question it can query the fallback API to fetch the answer.
+13
+
+Platform Architecture
+Unsupervised FAQsbeta
+​
+Botjet.ai’s unsupervised FAQs provide a feature to extract the knowledge from a website or
+documents provided by developer. Developer can upload a document or link for website, Botjet.ai’s AI
+crawls through document/website and process the information to meaningful FAQ data, build the ML
+model and use it to query the input provided by end-user.
+Small Talk
+Botjet.ai’s smalltalk module provides a default set of data which provides propensity for the bot to have
+a lighter conversation with end-users. Developer can expand the existing data set by adding different
+requests and responses to the existing sub categories or create new sub-categories inside categories.
+Custom Small talk
+Developer will also have the provision to create new categories along with the existing data. The
+categories can be domain specific or generic. Botjet.ai’s platform tool also provides feature to upload
+custom talk from .csv/Json file or add manually.
+14
+
+Platform Architecture
+Live Agent Handoff
+Botjet.ai platform allows seamless transition of conversation from bot to human agent based on
+context. A human agent can reside in any live chat support systems. When the conversation between
+user and bot is transferred to human agent it is transferred to appropriate agent along with the
+conversation history, agent can see this conversation history as messages in their live chat system
+which enables him to get complete context of user’s intentions and help him accordingly.
+In Botjet.ai platform agent handoff can be done in two ways, by conditionally branching in flow’s node
+network or through intelligent agent filters. It also provides on the go integration with live chat systems
+like EngageJet, LivePerson, LiveChat, ZenDesk and any live chat systems can be integrated through
+custom webhook integration.
+Intelligent Agent Filters
+Our platform provides filters to automatically handoff user to a human agent based on ongoing
+conversation between user and the bot. Below are the agent filters that can be configured in platform.
+● Sentiment based: Developer can set the sentiment levels and sentiment negativity score to
+automatically trigger the agent transfer process.
+15
+
+Platform Architecture
+● Rules based: Developer can add predefined rules like threshold for negative responses from
+bot and specific utterances from user.
+Conversational AI Engine
+Machine Learning Engine
+Botjet’s machine learning engine acts as an independent platform maintaining its own database which can be
+integrated to any system. Each system will be assigned an organization ID and training data will be stored in the
+database against that ID along with the primary language of the bot. The models generate pickle files for every
+bot and stores the training data in these files. The pickle files are generated depending The engine uses neural
+network models to predict answers in a contextual manner. Every user input will be sent to the engine to check
+whether there is any intent/faq/smalltalk/entity matches.
+Classifier & Scoring Engine
+Each user input will be sent to intent, faq and smalltalk classifiers which will return the highest matches. The
+answers from respective models will be future sent to scoring engine. The engine segregates the answers into 3
+different categories. The intents with score with above or equal 0.95 will be clustered as winners, score with
+above or equal 0.80 as answers and the rest as possibilities. On every category, future classification will be
+done to pick the best match found against the user input. This classification includes proportionate match,
+positional match, POS (parts-of-speech) match, lemmatization, stop word exclusion, word embeddings and many
+more. The engine can give one or more answers. First preference will be given to intents and faq’s continued by
+smalltalk.
+Entity Classifier Engine
+Entity classifier engine will be built on a set of training data which has NER tagged. For every user input, the
+engine gives an output with the found entities depending upon the tagging. The output from ML will be cross
+validated by Botjet’s entity recognition layer to see whether the identified entity via ML is an appropriate match
+or not. If there is no match from ML or the found match is not considered the layer tries to find a match from the
+16
+
+Platform Architecture
+raw user input. The recognition layer consists of set of rules against each entity type. These rules must be
+satisfied to declare the found value as an answer for any entity type.
+Semantic Dictionary
+Semantic dictionary are a set of contextual/dictionary synonyms which can be defined by the developer at flow
+level. These are used in intent recognition to accept and respond to a wide range of user utterances.
+Customizations
+The default score categories set by ML engine can be modified by the developer. The scoring mechanism is
+externalised to give the developer the capability to set the score ranges depending upon one’s requirement.
+Sentiment Analysis
+Sentiment analysis is done on every user input to determine the sentiment and tone of the user. More detailed
+information about sentiment analysis is discussed in below section.
+Architectural Representation
+Below is a diagrammatic representation of how ML works
+17
+
+Platform Architecture
+Intelligent Flow Interpreter
+Apart from AI Intelligence of Botjet.ai’s ML engine, platform also contains a flow interpreter engine
+which takes care of executing flow’s node network and transitions between each node with
+intelligence. It works along with the ML engine to identify the entities and intent utterances and
+behaves intelligently by queuing tasks and executing them based on context. It also holds a context
+that determines the user behaviour and takes actions accordingly which is termed as Bot Memory.
+Below section provides an overview of different contexts maintained by flow interpreter.
+Bot Memory
+This is the memory that a chatbot holds against user to remember his actions and take the next step
+accordingly. Any information residing in contexts can be accessed in nodes via context variables.
+User and Bot Context
+This context holds the information about user and bot. The user related information like name, email,
+phone number, access tokens etc. are accessible through this context and can be used in any script or
+applicable fields in nodes by ‘context.profile’ and ‘context.bot’.
+​ ​ ​ ​
+Session Context
+Session context holds the session information of user activities. Here session defines the time between
+start and end of flow execution by user. Developer should be deciding which information should be
+stored in session context by writing code to define session variables using ‘context.session’. Apart
+​ ​
+from session variables this context also contains the node values like ‘context.entity.<entityName>’ ,
+‘context.form.<Form Field>’ etc. This context gets destroyed once the user ends the flow.
+Persistable Context
+This context enables developers to store the information of user permanently against the bot.
+Developer should write a code and store it in ‘context.profile.profileinfo’ variable.
+​ ​
+Node Execution and Transitions
+Flow interpreter takes the responsibility of executing each node according to their functionalities and
+evaluating its transitions from one node to another node. The resolver engine with in the interpreter
+executes the Python/Javascript code in message prompts, script node and use the output for
+evaluating next steps. Developer can use custom logic in code to manipulate API responses and
+process user inputs to achieve the goal. Apart from execution of nodes its other capabilities are
+evaluating conditions for multiple sub-intents, recognizing and queuing follow-up intents, generating
+reports, feedbacks, pause and resuming intents, using filters for agent handoff, generating training
+logs, context management and parsing context values while executing node.
+18
+
+Platform Architecture
+Flow Reports
+Flow interpreter has ability to generate records apart from report node. These reports are useful for
+developer to understand end-user’s behaviour towards a bot.
+User drop-offs
+Flow interpreter engine generates user drop-offs analytics. It tells the node at which end-user left the
+bot in middle of the flow. Studying this analytics will make developer to redefine the flow in a more
+user-friendly manner.
+User feedbacks
+It can also collect the feedbacks from users through feedback node and generate the average rating
+analytics. All the feedback user messages are shown in the reports section.
+User reports
+Developer can generate any kind of reports through report node in the flow. He can collect the
+information from users and generate them as a report. All the collected reports can be managed in
+reports section of bot studio dashboard.
+Multiple Sub-Intents
+Flow designer give the capability for developers to define sub-intents i.e sub-flows within the flow
+using flow connector node. This sub-intent feature can be used in different ways, one to reduce
+redundancy by placing the commonly used node network in the hidden and disabled flow and
+importing it in other flows through flow connector, and the other is to execute condition based sub
+tasks.
+Condition based sub-intents
+Developer can define multiple sub-intents conditionally using flow connector. Flow interpreter will
+evaluate the conditions and place the eligible sub-intents in task execution queue.
+19
+
+Platform Architecture
+Context recall & Resume Current Task
+Developer can choose an option to recall context between sub-intents which enables the usage of
+common context between multiple tasks. Developer can also opt for resuming existing flow after
+executing sub-intent.
+Pause & Resume of intents
+Flow interpreter can recognize the user intentions of invoking another flow in the middle of a flow and
+can pause the existing flow to execute a new flow. After execution of recognized flow it comes back to
+old flow and resume it remembering its context. Developer can choose wide number of options
+whether to remember context or not, ask the user to invoke the new flow or not by remembering or
+forgetting task etc.
+Follow-up intents
+Botjet.ai’s ML engine can detect multiple intents from user input and flow interpreter can queue the
+detected intents as follow-up intents. For example user can say ‘book a cab and order food to my
+​
+place’ for which ML engine can detect two intentions of user ‘Booking a cab’ and ‘Ordering a food’.
+​ ​ ​ ​ ​
+Now flow interpreter can queue the second task as follow-up task and execute it after booking a cab.
+​
+The queuing of follow-up intents can be done in two ways
+Follow-up intent recognition
+In this case Botjet.ai’s ML engine takes the responsibility of detecting follow-up tasks and flow
+interpreter will take responsibility in remembering and queuing the task.
+FAQ follow-up triggers
+Botjet.ai’s platform provides a feature to tag a follow-up flow to a FAQ. when a FAQ is invoked through
+user input the tagged flow gets invoked followed by answering to the identified FAQ.
+Sentiment Analysis
+Botjet.ai’s ML engine provides the sentiment analysis on each user input in ML context, Flow
+interpreter makes use of this sentiment analysis in transferring the control to human agent based on
+thresholds set in agent filters and also provides the analysis details in user context, so that developers
+can refer the sentiment scores and take a decision in node network of the flow. Sentiment analysis
+have scores for each user emotion like Anger, Sadness, Joy, Disgust, Anger, Positivity, Neutrality and
+negativity of user message.
+Training Logs & Supervised Learning
+All the failed utterances that made the bot to go for fallback flow or message will be recorded in
+training logs. These logs are used for continuous supervised learning and improve the knowledge
+base of the bot. These can be viewed by developer in bot studio dashboard and can map the
+utterances to existing Flow tasks/FAQs/Small talk and update the ML model. This gives ability for bot to
+answer correctly if the failed utterance is asked again.
+20
+
+Platform Architecture
+Through bot studio dashboard, developers can also provide synonyms in semantic dictionary section
+which improves bot capability to find an answer to the user query.
+Enterprise Integration Services
+Botjet.ai’s enterprise integration services enables the developer to configure and interact with 3rd
+party enterprise systems to perform various operations to fulfill business requirements. Our platform
+provides tools to authorize enterprise user, perform operations through APIs, payments, notifications
+and custom view integrations like shopping cart, reports, maps, directions etc.
+API Service Interface
+Our platform gives ability to configure APIs through request node. Request node supports SOAP and
+RESTful APIs.
+RESTful APIs
+Developer can configure method, headers, payload body, query and path params of a RESTful API in
+request node. Developer can also use dynamic context variables in flow to generate dynamic values in
+API configuration by placing context variable in ‘{{}}’. Example: {{context.auth.googleAuth.token}}
+SOAP APIs
+Request node in flows support SOAP API integration. Developer needs to give the WSDL url for the
+SOAP request, Platform will take care of showing all available methods in SOAP WSDL. Developer can
+choose a method and payload is generated automatically by the platform. Developer can use dynamic
+values in payload by placing context variables in ‘{{}}’.
+Secure On-Prem Connector
+There can be cases where the enterprise application is running in a secure on-premise systems which
+cannot be connected by Botjet’s on-Cloud platform. Our secure on-prem connector which is to be
+deployed and running on on-premise systems enables secure bridge for accessing data between
+on-premise application and Botjet’s cloud. This lets enterprise customers to connect their services to
+Bojet.ai’s platform without disrupting existing security measures and risking their systems through
+exposure to public systems.
+21
+
+Platform Architecture
+Authorizations
+Botjet platform supports a wide range of authorization mechanisms. This enables a secure way of
+authorizing end-user in chatbot and fetching the user tokens for further operations in the chatbot.
+Developer needs to configure the authorization parameters in auth apps and can use them in
+authorization or request nodes.
+Built-in Authorizations
+Botjet.ai platform gives inbuilt support for authorizations like Google, Facebook, Twitter autherizations
+which enables developers to have a default authentication for the user and fetching user’s details.
+Platform also supports SMS OTP authorization through which bot can authorize users via phone
+number.
+Custom Authorizations
+Developers can also configure their own authorization parameters for different authorization
+specifications like OAuth1, OAuth2, Basic, API Key and LDAP.
+These Authorization apps created can be used in request nodes, authorization nodes and can use the
+tokens in interacting with their systems.
+SSO Support
+Botjet’s Web/Mobile SDK supports the SSO login of users in their website or app. Once the SDK is
+deployed in web and if the user is logged-in to their website, Botjet’s SDK has capability to know the
+22
+
+Platform Architecture
+logged-in user’s context and make the user information available in user contexts in the flow. This
+configuration is discussed more in Botjet Web SDK section.
+Payment Gateways
+Botjet.ai Platform gives a feature to perform payments through chatbot using different payment
+gateways configured. Payment node enables developer to ask for payment and dynamically set the
+amount and use the payment response for decision making in node network of a flow. Our platform
+supports payment gateways like PayTm, PayPal and stripe. Developer needs to configure merchant
+details of the payment gateway and use the payment node to ask for payments.
+Broadcast Webhooks
+Broadcast webhooks in Botjet.ai Platform provides the capability for enterprise applications to
+broadcast the messages to a particular group of users or channels. Enterprise systems can broadcast
+plain text message or formatted messages through template payloads in broadcast webhooks.
+Scheduled Notifications
+Subscriber node in node network of flow gives a feature to integrate enterprise APIs and provide a
+default schedule or ask user to schedule a job to receive scheduled notifications. When the node hits
+the time schedule it interacts with enterprise system through API configured to fetch data and format
+the data to message templates using post processing script.
+Custom Integrations
+Our platform supports integration of custom business views in Botjet’s Web SDK to expand bot’s
+functionality to meet business requirements. It has a capability to integrate shopping cart page, custom
+payments page, reports and graphs view etc through SDK bridge between web SDK and custom
+views. Context is maintained between user conversation and the views and is affected by operations
+performed by user on business views through SDK bridge like adding/removing items in the shopping
+cart. More detailed information about integrating a business view can be found in the product
+documentation.
+23
+
+Platform Architecture
+Messaging Service
+Botjet.ai’s messaging service enables safe passage of information between users and bots through
+different systems of Botjet.ai in real-time. It manages the processing of information, movement through
+different services that include secure validation, message normalization, message formatting,
+markdown processing and securing messages.
+This section describes the various components of messaging service and their responsibilities.
+Message Routing
+Message routing is responsible for routing messages to different services. Botjet.ai has different
+services like message templatization/formatting, markdown processing, bot-user validation, channel
+adapters, agent adapters and chat services. Message routing consumes the user input from channel
+and routes it to message normalization, validation, ML engine, Flow interpreter, message
+templatization and channel services to finally send the reply from bot.
+Encrypted chat history
+All the messages received by platform through different communication channels and the replies from
+bot are securely encrypted and stored in message store. All the information exchanged between bot
+and user are secured by hybrid encryption (AES 256 & RSA) and can be decrypted using organization’s
+private key which is owned by organization admin.
+Scheduled messaging & User notifications
+Messaging service runs the times for scheduled broadcasts and schedule subscriptions of user. It is
+responsible to process the scheduled APIs, apply message templatization and deliver the message to
+user through channel adapters. It is also responsible for sending user notifications through SMS or email.
+​
+Channel Integrations
+Botjet.ai platform provides omni channel communication i.e build once and deploy anywhere. The
+channel integration services takes care of performing various operation like securing channel with
+channel level authentication, sending and receiving messages, formatting messages to templates,
+fetching user details from channel’s system.
+This section provides brief information about all the operations performed by channel integration
+services.
+Channel Authorization
+Communication between user and bot through channel is secured by performing channel level
+authorization. Different channels provides different kind of authorization specification like verifying
+24
+
+Platform Architecture
+payload authenticity using signature headers, authorization through tokens etc. Some channels like
+slack is based on socket connection which is authenticated during initial handshake.
+Message API Handling
+Channel integration services takes care of sending and receiving messages using channel’s
+messaging APIs or socket events. It is responsible of preparing channel supported payload and
+acknowledging the platform once the message is delivered to the user.
+Message Auto Formatting
+Channel integration services provide a default feature to apply various message templates supported
+by channel. It takes care of formatting messages to button templates, list templates, carousel
+templates, text messages and processing markdowns in text messages. Developer can define their
+own message template payload supported by channel in message prompts.
+Profile Fetcher
+Profile fetcher in channel integration service can fetch the user details like first name, last name, email
+id, phone number, location and other supported details based on channel. These details can later be
+used by developers through context to display custom messages, sending notification and generating
+reports.
+Built-in channels
+Botjet.ai Platform provides built-in channel integrations for various messaging clients like Facebook,
+Slack, Skype, Whatsapp, Telegram, Line, Workplace by Facebook, SMS, Twitter, Microsoft Teams,
+Hangouts, Kaizala, iMessenger and various voice channels like Amazon Echo, Google Home, Google
+Assistant, Twilio Voice, VoiceXML and ConvoJet IVR.
+It also provides a feature of multiple instances of channel which unlocks a feature like integrating
+multiple pages in facebook to single bot.
+25
+
+Platform Architecture
+Custom channel
+Botjet.ai Platform supports integration of custom channel through webhooks. Our platform provides
+real-time webhooks for receiving and sending messages which can be integrated with any custom
+channels seamlessly. It provides both synchronous and asynchronous webhooks which makes it more
+flexible for creating real-time channel integration.
+BotJet.ai SDK
+Botjet.ai provides SDK to integrate chat window in customer’s website or mobile apps. For web SDK
+we provide two types of deployments, in first type of deployment customers can use the CDN link of
+our sdk to import our SDK to their website and simply instantiate it with few lines of code as specified
+below.
+It also provides minimal modifications of how chat window looks like. In the second type of deployment
+customers can request for access of complete SDK code and make their own changes on SDK’s look
+and feel and deploy it in their websites.
+SDK also provides options to send profile information to enable SSO support. They can also send NER
+Meta information to invoke the flow with entity values as welcome flow. More detailed information on
+payloads can be found in the user documentation.
+Agent Integrations
+26
+
+Platform Architecture
+Agent services in Botjet.ai’s platform is used for integrating different customer support platforms with
+bot. Agent services are responsible to maintain and push the session chat history to human agent
+platforms as messages or note depending on third party platform compatibility.
+EngageJet Integration
+EngageJet is a customer support platform provided by Botjet which provides chat and ticketing
+support, load balancing for human agents, campaigns and various features that make it robust
+supporting platform.
+Built-in agent integrations
+Apart from EngageJet our platform supports on the go integration with various customer support
+platforms like LiveChat, FreshChat, ZenDesk, Live Person etc.
+Custom agent integrations
+Our platform supports custom agent integrations through generic integration i.e webhooks. It supports
+both synchronous and asynchronous webhooks for receiving and sending messages in real-time.
+Security & Compliance
+Our platform follow strict guidelines for security and compliance. This section describes the security
+and compliance methods followed by our platform to protect your data and ensuring secure
+transmission of data between various systems involved.
+Encryption
+All the APIs provided in platform are secured through HTTPS over Transit Layer Security (TLS) using
+AES 256 standard. All the messages between user and bot/human agent are encrypted through hybrid
+encryption mechanisms which is detailed more in encrypted chat history section.
+Authentication
+The bot studio dashboard APIs are authenticated securely using CSRF tokens and auth tokens. Bot
+studio dashboard also have custom password policies for better password strength.
+All the third party bot authentication uses OAuth1.0, OAuth2.0, basic, API Key, LDAP and the user
+tokens fetched are saved in encrypted store.
+SDK Domain verification
+Botjet Web SDK connection is secured through JWT token Authentication and originated payload
+verification through domain verification. Developers can list the allowed domains in bot settings so that
+the bot deployed those domains can only authenticated for socket connection.
+Encrypted chat history & Key Management
+Organization admins can create their key pairs and store their private key securely. These generated
+key pairs will be used in hybrid encryption mechanism to encrypt the user messages and store in
+27
+
+Platform Architecture
+message store. In this specification each user message is encrypted with AES-256-CBC using a 16byte
+random key which is in turn encrypted with organization public key using RSA and stored against the
+user message. To view chat history of any user, organization admin has to upload the private key and
+is used to decrypt each temporary key stored against message and then decrypt the user message.
+Field Masking
+Some information like user’s phone number or credit/debit card numbers should be allowed to view
+anywhere even in chat history by admin. These kind of information can be marked as masked fields in
+entity/form nodes which are securely encrypted and used in context and are not allowed to store
+anywhere.
+Audit Logs
+Organization admins can access audit logs for all users which provide information about date and time
+of modifications done on any resource related to a bot in dashboard.
+Bot Studio GUI
+Bot studio GUI provides all the tools required for building and managing bot. This section describes
+each tool that is used to build, configure and manage bot.
+Authorization & Payment Apps
+These apps are used to configure third party enterprise authorizations and payment gateway
+configurations. Developer can create any number of authorization and payment apps and are used in
+payment and auth nodes.
+Flow Designer
+Flow Designer tool is used to design and develop node network in flows. It provides an easy way for
+creating and managing nodes, their properties and transitions from one node to another.
+28
+
+Platform Architecture
+Node Properties
+Each node has its own set of properties based on its functionality. Below screenshot shows the
+window containing flow properties.
+Node Transitions
+Flow path between different nodes is defined through transitions panel in node settings. Each
+transition can be defined using if else statements on context variables.
+Node Reusability
+Developer can create a new node or clone the existing node to minimize the development effort. A
+node in one flow can be cloned to other flow by creating a new instance of node.
+Testing & Debugging
+Developer can test the bot’s behaviour through the test chat window provided in bot studio
+dashboard. Chat window here comes with debugger option which shows the debug logs for each step
+in the execution of flow. User can also view ML engine responses for each user input provided in chat
+window. It also shows current running context payload of bot.
+29
+
+Platform Architecture
+Training
+Training tab in Botjet’s bot studio provides an option to train the bot from failure logs and also option to
+import export the utterances. Developer can also train bot through entity tagging and entity utterances.
+Import & Export Bot
+Botjet’s platform support bundled export of a bot/FAQ/flow task/Utterances and can maintain a backup
+of their built bot. The exported JSON can be imported to other environments through import options
+for bot, FAQ, flow and utterances.
+Versioning
+Botjet’s platform provide complete SDLC for designing, developing and deploying a chatbot into
+production. Each flow task is versioned and has three states, development, production and in-review.
+When a flow is created it will be in development state with version 1.0. Once the flow is submitted for
+deployment request it moves to in-review state and then to production when request is approved by
+organization admin. Developer can upgrade the existing production flow to dev 1.1 version through
+which developers can push bot upgrades. Platform also provides a feature to downgrade or revert to
+old state.
+Multi-Language
+Bot workspace supports building of bot for multiple languages making it multilingual bot. The entire
+workspace is separated with language namespace. All the properties like flow tasks, small talk and
+training data can be defined at language level by changing namespace.
+30
+
+Platform Architecture
+Channels
+Channels tab provides interface various channels with bot and also create multiple instance of channel
+against language of bot and various 3rd party bot users. Integration of custom channel is done using
+webhook channel provided in interface.
+Agent Transfer
+Agent tab provides interface to integrate the customer agent platform and configure the agent filters.
+Broadcast
+Broadcast tab in bot studio provides interface for scheduling broadcasts to users via bot. Developer
+can also publish the messages instantly. It provides different types schedules through cron scheduling
+like ‘every 1 hour’, ‘every weekend at 10:00 AM’, ‘Every morning’ etc. Developer can configure channel
+level broadcast and prepare responses using static templates or formatted message payloads.
+31
+
+Platform Architecture
+Analytics & Reports
+Bot Studio provides analytics screen which shows the total number of bot users, number of success
+response, failed response, voice requests, source channels, goals completed, top intents, agent
+interactions, user drop-offs, user locations and feedback averages.
+Collaboration
+Bot Studio provides sharing of bot between developers to built the bot collaboratively. It also comes
+with concurrent access protection protect the flows from parallel editing. If a flow is being editing by a
+developer other developers will be shown a message and opened in read only mode.
+Business Page
+Developers can create a business page which provides a sample page with Botjet Web SDK integrated
+to bot. Developers can test and get a flavour of bot when it is accessed in their website as public user.
+Control Center GUI
+Control Center GUI provides an interface for organization admins to manage users and their roles, view
+chat logs, audit logs and complete SDLC for bot deployment.
+User Management and Roles
+Organization admins can create users and assign roles for them. Botjet.ai platform gives three roles,
+admin to manage bot approvals, manage other users and their bots, view chat history and audit logs.
+Bot developer role, for developing bots and managing them. Business user role, for viewing analytics,
+add training data, broadcast business messages for users.
+32
+
+Platform Architecture
+Bot Approvals
+Organization admins can approve or reject bot deployment requests from developers. Developers can
+deploy whole bot or each task in bot. Admins also receive notifications for deletion of flow requests.
+Chat History
+Admins can generate key pairs for encryption and store their private key securely. Using control center
+admins can access encrypted chat history by providing their private key.
+Audit Logs
+Organization admins can access audit logs for all users which provide information about date and time
+of modifications done on any resource related to a bot in dashboard.
+ObserverJet
+Overview
+ObserveJet is a tool developed to monitor real-time chat volumes, bot performance, agent
+performance and live analytics which gives an overview of sentiment analysis, chat sessions, time
+durations etc. It also provides intelligent AI filters which will help in improving the chat conversation
+experiences.
+33
+
+Platform Architecture
+Live Analytics
+Live analytics gives us the statistical data of bots and conversations in real time. 8 different categories
+data is represented here.
+Bots: Bots has total number of bots created in an organization with the number of bots with active
+​
+conversations with end-users.
+Users: Users has total number of users who have conversed with the platform and the number of users
+​
+active in that present moment.
+Messages: Messages has the number of messages and offensive messages identified in user
+​
+conversations.
+Filters: Filters has the number of chat sessions exceeded the bot filter and the agent filter.
+​
+Responses: Responses has the average time taken for a bot and agent to give the response.
+​
+Sessions: This provides the average time each bot and agent session took.
+​
+Chats: Chats section gives the total number of bot, agent and admin chats.
+​
+Sentiment Analysis: Sentiment analysis is done on the user inputs and a number of positive, negative
+​
+and neutral inputs identified.
+Live Chat Monitoring
+Live chat monitoring enables the admin to monitor the conversations across different bots with a
+notification system to let the authorized personnel know about the active bots. Each user conversation
+has details about user and bot like user name, user location, bot name, bot type, bot domain, bot
+created time, conversational language and conversational medium.
+34
+
+Platform Architecture
+Intelligent Filters
+Filters helps the admin to monitor, alert, improve and handle bot-agent-user conversations in a better
+way. These filters are at universal and individual bot levels. Universal level filters are applicable to all
+the bots. Individual bot filters override the universal filters if set. The filters which are set are applicable
+to that particular admin.
+Universal Filters
+Bot Duration & Agent Duration
+Duration gives admin the ability to set a time frame in minutes and seconds format. Once the duration
+set is crossed, the admin will be alerted in that particular chat session window saying the bot session is
+crossed.
+Report Offensive Language
+In this filter, admin has the ability to send an email to the concerned personnel whenever an offensive
+word is identified in user input. A list of offensive words are hardcoded inside the platform as of now. In
+the body of the email admin can access the message which is identified as offensive by giving
+‘{user.offensiveMessage}’.
+Stop Words
+Admin can give list of words which are considered as stop words. When any of the mentioned word is
+identified in the user input, admin will be alerted in that particular chat session window saying stop
+word identified in user input.
+Handle Error Responses
+In this filter, admin can provide the error count, when the user input is replied with an error message
+consecutively and the count given is crossed, then the user chat will be handed over to the agent
+along with the previous chat history of the user with the respective bot.
+35
+
+Platform Architecture
+Individual Bot Filters
+The bot filters have 2 sections where one is basic and the other is advanced. The basic filters are same
+as the universal filters. The advanced filters are the AI filters. The AI filters have 5 categories which are
+bot response time, no response from bot, failed intent detection, entity error detection and intent
+drop-off analysis. In these bot response time and failed intent detection are tightly coupled with the bot
+duration and handle error responses in the basic filters. Only if the mentioned categories in the basic
+filters are set, admin will have the feasibility to enable them in advanced filters.
+No response from bot will be triggered when user input is not served which implies a bot crash. Entity
+error detection is triggered when user input for an entity node is not detected for 3 consecutive times.
+Intent drop-off analysis is triggered when a flow is discarded in between. It gives us the details at which
+point of the flow the flow is discarded.
+Chat Takeover
+When ever the admin is alerted in any chat window depending upon the filters set, actions will be
+enabled. There are 2 actions ‘Take control’ and ‘Agent transfer’. If admin selects take control the user
+​ ​ ​ ​
+will be directed to the admin. On selecting agent transfer, a list of online agents will be displayed
+where admin can select the agent to which the user chat will be transferred to.
+Architectural Representation
+Below is the detailed diagrammatic representation of observeJet.
+36
+
+Platform Architecture
+Convojet Platform
+The Convojet Platform of Botjet.ai is a robust solution for conversational IVR for your PBX systems. This
+platform provides an easy way to configure and manage the conversation IVR bot built with Botjet.ai
+chatbot platform. It also has several features like configuring DID numbers, managing bot extensions,
+voice synthesis, recognition and agent transfer. Its an easy tool for providing voice bot services to your
+end users.
+We provide this solution with default Asterisk PBX and it can also work as module on top of any
+custom PBX systems.
+How it works?
+Our ConvoJet platform act as a module on top of any PBX system which takes care of configuring
+managing and monitoring the PBX system and its voice bot integrations. It provides a service to add
+chat bot as an agent extension in your PBX system and receives the call from end-users. The bot
+extension interacts with botjet.ai platform through webhook channel to exchange conversation
+between user and bot. The user message is converted to text using ASR and the reply text message
+from bot is converted to voice and streamed to user using TTS engine. It has capability to detect
+silence, barge-in of user and act accordingly.
+DID Configuration
+This module in Convojet provides an interface for developers to configure DID numbers and link them
+to bot extension or any other dial plan in PBX systems. Outbound and Inbound configurations of DID
+number is managed through this module.
+Bot Extension management
+Bot extension management helps developers to integrate the bot built in Botjet.ai Platform to Convojet
+Platform through voiceXML or webhook channels. Apart from integrating it also provides custom
+options like silence threshold, user barge-in options, bot voice customizations and ASR engine
+configuration.
+Bot Voice Customizations
+Import modules in bot voice services are ASR and TTS. ConvoJet platform provides on the go
+integrations of various cloud based ASR and TTS engines like Google Voice, Amazon Polly, IBM
+Watson and enterprise voice services nuance dragon, MaryTTS and other generic voice services. It
+also comes default with Botjet.ai’s ASR and TTS engines which are built on robust engines Kaldi and
+Nvidia’s waveglow.
+37
+
+Platform Architecture
+Analytics
+Convojet provides real-time analytics like system usage of PBX, convojet modules and voice services.
+It also provides analytics for number of interactions, success, failure rates, user barge-ins, user call
+drop-offs and voice usage information.
+Other capabilities
+Convojet have other capabilities like maintaining user call recordings, AI reports generated based on
+user interactions with bot and human agent transfer with in PBX systems. ConvoJet provides a way to
+configure human agent transfer which triggers when bot fails to answer user queries. Human agent
+transfer can redirect call to a traditional IVR dial plan or human agent dial plan in PBX systems.
+Speech Engine
+We provide our own voice services to support our voice based bots for robust integration with
+ConvoJet and other voice channels.
+ASR Engine
+Botjet’s ASR engine is built using an open-source speech recognition engine. It is trained with
+thousands of hours of voice data for producing better results. It runs of multi GPU and CPU
+environment for training large datasets and provide the output with much lesser latency. We provide a
+dashboard to train the instance of our ASR with custom domain data by developer and import new
+vocabulary expanding the training dataset. Our ASR engine also provides key features like streaming
+recognition, noise cancellation, domain specific vocabulary and dataset.
+TTS Engine
+Botjet’s TTS engine is built using Nvidia’s WaveGlow algorithm in order to provide fast, efficient and
+high-quality audio synthesis. It is a deep neural network for generating human-like voice. We provide
+versions of male and female voices. Our TTS engine is trained with thousands of hours of female and
+male audio data.
+38
+
+Platform Architecture
+End-to-End Message Flow
+Below diagram shows the user-bot message flow through various systems in Botjet.ai’s chatbot
+platform.
+Platform Deployment
+Botjet.ai chatbot platform provides two deployment options, cloud and on-premise.
+On-Cloud
+The cloud deployment of Botjet.ai platform is hosted on Amazon Web Services which is known for its
+robust, high availability and scalable cloud computing services. Our platform’s components are
+deployed with auto scaling, load balancing and replication on failure and are constantly monitored.
+39
+
+Platform Architecture
+On-Premise
+Below architectural diagram provides the visual and understandable structure of components involved
+in on-premise deployment.
+System requirements vary based on number of users going to interact with bot. Our technical support
+team provides a better planning instructions for deployment based on the size of users.
+40
+
+Platform Architecture
+Comparison Chart
+41
+
+Platform Architecture
+About us
+42
