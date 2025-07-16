@@ -1,0 +1,6 @@
+*.gguf
+*.pdf
+/.vscode
+/db
+/venv
+/__pycache__

@@ -1,3 +1,8 @@
+# --- 0) Monkey‑patch sqlite so Chroma stops rejecting UBI 9's old 3.34 build ----
+import pysqlite3, sys
+sys.modules["sqlite3"] = pysqlite3
+
+# --- 1) Std lib ---------------------------------------------------------------
 import os
 import yaml
 from fastapi import FastAPI, UploadFile, File, HTTPException
